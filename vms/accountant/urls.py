@@ -4,11 +4,7 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='acc_home'),
-<<<<<<< Updated upstream
-    path('notice/', views.notice, name='notice'),
-=======
     path('notice/', views.accNotice, name='notice'),
->>>>>>> Stashed changes
 
     path('logbook/', views.logbook, name='LogBook'),
     path('logbook/input-details/', views.inputDetails, name='accinputDetails'),
