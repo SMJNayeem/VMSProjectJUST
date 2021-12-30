@@ -9,41 +9,41 @@ from accounts.decorators import gsubadmin_only
 @login_required(login_url='login')
 @gsubadmin_only
 def subadminHome(request):
-    return render(request, 'subAdmin/subadminhome.html')
+    return render(request, 'vmssubAdmin/subadminhome.html')
 
 
 @login_required(login_url='login')
 @gsubadmin_only
 def subadminNotice(request):
-    return render(request, 'subAdmin/subadminnotice.html')
+    return render(request, 'vmssubAdmin/subadminnotice.html')
 
 
 @login_required(login_url='login')
 @gsubadmin_only
 def subadminEditnotice(request):
-    return render(request, 'subAdmin/subadmineditnotice.html')
+    return render(request, 'vmssubAdmin/subadmineditnotice.html')
 
 
 @login_required(login_url='login')
 @gsubadmin_only
 def subadminUserCost(request):
-    return render(request, 'subAdmin/subadminusercost.html')
+    return render(request, 'vmssubAdmin/subadminusercost.html')
 
 
 @login_required(login_url='login')
 @gsubadmin_only
 def subadminUserRequest(request):
-    return render(request, 'subAdmin/subadminuserrequest.html')
+    return render(request, 'vmssubAdmin/subadminuserrequest.html')
 
 
 @login_required(login_url='login')
 @gsubadmin_only
 def subadminVehicle(request):
-    return render(request, 'subAdmin/subadminvehicle.html')
+    return render(request, 'vmssubAdmin/subadminvehicle.html')
 
 
 @login_required(login_url='login')
 @gsubadmin_only
 def subadminDriver(request):
-    return render(request, 'subAdmin/subadmindriver.html')
+    return render(request, 'vmssubAdmin/subadmindriver.html')
 
