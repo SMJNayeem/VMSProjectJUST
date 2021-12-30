@@ -1,10 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model, logout, login
 from django.utils.decorators import method_decorator
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import CreateView, FormView
+from django.contrib import messages
+
 
 from .models import LogBook
 from .forms import LogbookForm
@@ -21,7 +23,7 @@ def home(request):
 @login_required(login_url='login')
 @gaccountant_only
 def accNotice(request):
-    return HttpResponse("This is notice page for accountant")
+    return render(request, 'accountant/accountantnotice.html')
 
 
 # @login_required(login_url='login')
@@ -92,3 +94,9 @@ def inputDetails(request):
             return redirect('LogBook')
     context = {'form': form}
     return render(request, 'accountant/inputdetails.html', context)
+
+@login_required(login_url='login')
+def logoutUser(request):
+    logout(request)
+    messages.success(request, "You have been logged out")
+    return redirect('homePage')

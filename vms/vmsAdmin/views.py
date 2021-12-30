@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import CreateView, FormView
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model, logout
+from django.contrib import messages
 from django.utils.decorators import method_decorator
 # import sys
 #
@@ -121,3 +122,10 @@ def addDriver(request):
 #     # form_class = DriverForm
 #     # template_name = 'vmsAdmin/add-driver.html'
 #     # success_url = 'admin_home'
+
+
+@login_required(login_url='login')
+def logoutUser(request):
+    logout(request)
+    messages.success(request, "You have been logged out")
+    return redirect('homePage')

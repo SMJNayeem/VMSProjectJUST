@@ -11,4 +11,5 @@ urlpatterns = [
     # path('logbook/', views.LogBookCreate.as_view(), name='logBook'),
     # # path('success/', views.InfoSuccess, name='datainput')
     # re_path('accountant/logbook/inputderails/(?P<id>\d+)/$', views.InfoSuccess, name='datainput'),
+    path('logout/', views.logoutUser, name='logout')
 ]

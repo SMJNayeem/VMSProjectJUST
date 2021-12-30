@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 from django.utils.decorators import method_decorator
+from django.contrib import messages
 
 from accounts.decorators import gsubadmin_only
 
@@ -47,3 +49,8 @@ def subadminVehicle(request):
 def subadminDriver(request):
     return render(request, 'vmssubAdmin/subadmindriver.html')
 
+@login_required(login_url='login')
+def logoutUser(request):
+    logout(request)
+    messages.success(request, "You have been logged out")
+    return redirect('homePage')

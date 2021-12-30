@@ -9,4 +9,5 @@ urlpatterns = [
     path('request/', views.subadminUserRequest, name='SubaminUserRequest'),
     path('vehicle/', views.subadminVehicle, name='SubadminVehicle'),
     path('driver/', views.subadminDriver, name='SubadminDriver'),
+    path('logout/', views.logoutUser, name='logout')
 ]
