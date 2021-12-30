@@ -20,7 +20,7 @@ def home(request):
 
 @login_required(login_url='login')
 @gaccountant_only
-def notice(request):
+def accNotice(request):
     return HttpResponse("This is notice page for accountant")
 
 
