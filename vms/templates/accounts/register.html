@@ -6,9 +6,10 @@
         {% include 'accounts/accountsnavbar.html' %}
     </div>
 <div class="container col-md-6 offset-md-3">
-    <h1 class="text-center"> Register </h1>
+
     <br>
     <form method="POST" action="{% url 'register' %}">
+    <h1 class="text-center"> Register </h1>
         {% csrf_token %}
 
         {% if form.errors %}
@@ -18,6 +19,7 @@
         <p> All Fields are Required *** </p>
 
         {{ form.as_p }}
+
 
         <br>
 
